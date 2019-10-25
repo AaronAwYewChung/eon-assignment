@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(to bottom right,#1C3763,#BB3B56);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* --------NavBar-------- */
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 15vh;
+    font-family: 'Noto Serif', serif;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 14px;
+    border: 2px solid white;
+    border-radius: 25px;
+    padding: 10px 15px;
+    transition: 0.5s;
+}
+
+.nav-links a:hover {
+    background-color: white;
+    color: #3862AF;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+}
+
+@media screen and (max-width:600px){
+    body {
+        overflow: hidden;
+    }
+
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 85vh;
+        top: 15vh;
+        background-image: linear-gradient(to bottom right,#1C3763,#BB3B56);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        z-index: 10;
+    }
+    
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* --------Content-------- */
+
+#container {
+    height: 85vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 15px;
+}
+
+.pics {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.pics img {
+    width: 600px;
+}
+
+.input-content {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+form{
+    width: 360px;
+}
+
+form h2{
+    font-size: 2.9rem;
+    margin: 15px 0;
+    color:white;
+}
+
+.input-div {
+    display: grid;
+    margin: 5px 0;
+    padding: 5px 0;
+}
+
+.input-div input {
+    margin: 5px 0px;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 25px;
+    background-color: transparent;
+    color: white;
+    font-size: 12px;
+    transition: 0.5s;
+}
+.input-div .one:click {
+    border: 2px solid red;
+}
+
+.input-div input:hover {
+    background-color: #392A40;
+    border: 2px solid #3862AF;
+}
+
+.input-div input:focus::placeholder {
+    opacity: 0.5;
+}
+
+.input-div input:invalid {
+    border: 2px solid red;
+}
+
+.input-div input::placeholder {
+    color: white;
+    padding-left: 2px;
+    letter-spacing: 2px;
+}
+
+
+button {
+    cursor: pointer;
+    color: white;
+    width: 100%;
+    background-color: #1C3763;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+button:hover {
+    background-color:#3862AF ;
+}
+
+button img {
+    display: inline;
+    padding-top: 5px;
+}
+
+.small-info {
+    display: grid;
+    float: right;
+    text-align: right;
+    color: white;
+    margin: 5px;
+}
+
+.small-info small {
+    margin-top: 3px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.small-info small a{
+    text-decoration: none;
+    color: white;
+    transition: 0.5s;
+}
+
+.small-info small a:hover{
+    color: #3862AF ;
+    border-bottom: 1px solid #3862AF;
+}
+
+@media screen and (max-width:1024px){    
+    #container {
+        grid-template-columns: 1fr;
+    }
+    
+    .pics {
+        display: none;
+    }
+
+    .input-content{
+        position: relative;
+        justify-content: space-around;
+        
+    }
+}
